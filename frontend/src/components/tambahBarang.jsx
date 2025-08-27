@@ -8,6 +8,8 @@ const TambahBarang = ({
   stockValue,
   stockOnChange,
   onSubmit,
+  onKeyDown,
+  inputRefProp,
 }) => {
   return (
     <tr className="hover:bg-gray-100 border-2">
@@ -20,6 +22,9 @@ const TambahBarang = ({
           onChange={nameOnChange}
           placeholder="Enter new item name"
           className="w-full px-4 py-2 border-none rounded-md focus:outline-none"
+          onKeyDown={onKeyDown}
+          ref={inputRefProp}
+          autofocus
         />
       </td>
       <td className="py-2 border-r-2 px-4 border-b text-center">
@@ -29,6 +34,7 @@ const TambahBarang = ({
           onChange={priceOnChange}
           placeholder="Enter new price"
           className="w-full px-4 py-2 border-none rounded-md focus:outline-none"
+          onKeyDown={onKeyDown}
         />
       </td>
       <td className="py-2 border-r-2 px-4 border-b text-center">
@@ -38,6 +44,7 @@ const TambahBarang = ({
           onChange={stockOnChange}
           placeholder="Enter remaining stock"
           className="w-full px-4 py-2 border-none rounded-md focus:outline-none"
+          onKeyDown={onKeyDown}
         />
       </td>
       <td className="no-print py-2 px-4 border-b text-center">
